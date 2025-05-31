@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient - LifeCare Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_patient.css') }}">
+
+    <script>
+        function addPatient(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Patient added successfully!");
+            window.location.href = "admin_dashboard.html"; // Redirect to Admin Dashboard
+        }
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">LifeCare Hospital</div>
+        <div class="nav-links">
+            <a href="admin_dashboard.html">Dashboard</a>
+            <a href="index.html" style="color: red;">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Add New Patient</h2>
+        <form onsubmit="addPatient(event)" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <textarea name="address" placeholder="Address" rows="3" required></textarea>
+            <textarea name="medical_history" placeholder="Medical History" rows="4"></textarea>
+            
+            <!-- File Upload (Optional) -->
+            <label for="report" class="file-upload">Upload Report (Optional)</label>
+            <input type="file" id="report" name="report" accept=".pdf,.jpg,.png,.jpeg">
+
+            <button type="submit">Add Patient</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Login - LifeCare Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='patient_login.css') }}">
+ <!-- External CSS File -->
+    <script>
+        function sendOTP() {
+            let phone = document.getElementById("phone").value;
+            if (phone.length === 10) {
+                alert("OTP sent to " + phone);
+            } else {
+                alert("Enter a valid 10-digit phone number");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="hospital-name">LifeCare Hospital</div>
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Patient Login</h2>
+        <form action="patient_dashboard.html" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+            <input type="text" name="otp" placeholder="Enter OTP" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>

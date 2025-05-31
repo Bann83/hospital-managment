@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Patients - LifeCare Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_reports.css }}">
+    <!-- External CSS File -->
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">LifeCare Hospital</div>
+        <div class="nav-links">
+            <a href="admin_dashboard.html">Dashboard</a>
+            <a href="add_patient.html">Add Patient</a>
+            <a href="index.html" style="color: red;">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Patient Records</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Medical History</th>
+                <th>Report</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>35</td>
+                <td>Male</td>
+                <td>+1234567890</td>
+                <td>john@example.com</td>
+                <td>123 Street, City</td>
+                <td>Diabetes</td>
+                <td><a href="reports/john_report.pdf" class="btn" target="_blank">View Report</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

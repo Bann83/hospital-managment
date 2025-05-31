@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Doctor - LifeCare Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_doctor.css') }}">
+
+    <script>
+        function addDoctor(event) {
+            event.preventDefault(); // Prevent actual form submission
+            alert("Doctor added successfully!");
+            window.location.href = "admin_dashboard.html"; // Redirect to admin dashboard
+        }
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">LifeCare Hospital</div>
+        <div class="nav-links">
+            <a href="admin_dashboard.html">Dashboard</a>
+            <a href="index.html" style="color: red;">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Add New Doctor</h2>
+        <form onsubmit="addDoctor(event)" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="specialization" placeholder="Specialization" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="number" name="experience" placeholder="Years of Experience" required>
+            <textarea name="qualifications" placeholder="Qualifications" rows="3" required></textarea>
+            <textarea name="address" placeholder="Address" rows="3"></textarea>
+            
+            <!-- File Upload -->
+            <label for="photo" class="file-upload">Upload Photo</label>
+            <input type="file" id="photo" name="photo" accept=".jpg,.png,.jpeg" required>
+
+            <button type="submit">Add Doctor</button>
+        </form>
+    </div>
+
+</body>
+</html>
